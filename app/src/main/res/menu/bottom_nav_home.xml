@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/exit_nav"
+        android:icon="@drawable/ic_baseline_arrow_back_24"
+        android:title="@string/exit_nav"
+        />
+    <item
+        android:visible="false"
+        android:id="@+id/back_nav"
+        android:icon="@drawable/ic_baseline_arrow_back_24"
+        android:title="@string/back_nav" />
+    <item
+        android:visible="false"
+        android:id="@+id/translateSpeakFragment"
+        android:icon="@drawable/ic_baseline_g_translate_24"
+        android:title="@string/translate_nav" />
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="@string/home_nav" />
+
+
+    <item
+        android:id="@+id/settingsFragment"
+        android:icon="@drawable/ic_settings"
+        android:title="@string/settings_nav" />
+</menu>

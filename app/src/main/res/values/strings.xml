@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Speak To World</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="exit_nav">Exit</string>
+    <string name="translate_nav">Translate</string>
+    <string name="home_nav">Home</string>
+    <string name="settings_nav">Settings</string>
+    <string name="back_nav">Back</string>
+    <string name="antelope">antelope</string>
+    <string name="yes">Yes</string>
+    <string name="no">Cancel</string>
+
+    <string name="ad_attribution">Ad</string>
+
+    <string name="from">From</string>
+    <string name="to">To</string>
+    <string name="speak_from">Speak From</string>
+    <string name="change_voice">Change Voice</string>
+    <string name="change_voice_speed">Voice Speed</string>
+
+
+    <string name="offline_translate">Offline Translate</string>
+    <string name="image_text_translate"><![CDATA[ Image to text & translate]]></string>
+    <string name="my_other_apps">My other apps.</string>
+    <string name="speak_to_world">Speak To World</string>
+    <string name="share_this_app">Share This App!</string>
+    <string name="rate_this_app">Rate This App</string>
+    <string name="change_theme">Change Theme</string>
+    <string name="todo">TODO</string>
+
+</resources>

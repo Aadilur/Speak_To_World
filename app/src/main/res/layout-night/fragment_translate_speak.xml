@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".TranslateSpeakFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#091D27">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/_100sdp">
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|center_horizontal"
+                android:orientation="vertical"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <FrameLayout
+                    android:id="@+id/ad_frame"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_5sdp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="#0D2C3B"
+                    app:strokeWidth="0dp"
+                    app:cardElevation="@dimen/_5sdp"
+                    app:cardCornerRadius="@dimen/_10sdp"
+                    app:cardUseCompatPadding="true">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="start"
+                        android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/fromLanguage"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:contentDescription="@string/from"
+                        android:prompt="@string/from" />
+
+                        <Button
+                            android:id="@+id/downloadFromPackage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Download"
+                            android:visibility="gone"
+                            android:paddingBottom="@dimen/_5sdp"
+                            android:minHeight="0dp"
+                            android:minWidth="0dp"
+                            android:textSize="@dimen/_8ssp"
+                            android:layout_marginBottom="@dimen/_5sdp"
+                            android:layout_marginStart="@dimen/_7sdp"
+                            />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                    <ImageButton
+                        android:id="@+id/swipeSpinner"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="match_parent"
+                        android:elevation="2dp"
+                        android:foreground="@drawable/ripple_oval"
+                        android:src="@drawable/ic_retake"
+                        android:textAllCaps="false"
+                        android:background="@drawable/round_bg"
+                        android:backgroundTint="#2196F3"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:padding="@dimen/_5sdp"
+                        app:tint="#0D2C3B" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="#0D2C3B"
+                    app:strokeWidth="0dp"
+                    app:cardCornerRadius="@dimen/_10sdp"
+                    app:cardElevation="@dimen/_5sdp"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="end"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatSpinner
+                            android:id="@+id/toLanguage"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:textAlignment="textEnd"
+                            android:layoutDirection="rtl"
+                            android:contentDescription="@string/to"
+                            android:prompt="@string/to" />
+
+                        <Button
+                            android:id="@+id/downloadToPackage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Download"
+                            android:visibility="gone"
+                            android:paddingBottom="@dimen/_5sdp"
+                            android:minHeight="0dp"
+                            android:minWidth="0dp"
+                            android:textSize="@dimen/_8ssp"
+                            android:layout_marginBottom="@dimen/_5sdp"
+                            android:layout_marginEnd="@dimen/_7sdp"
+                            />
+
+                    </LinearLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/downloadingText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/_16ssp"
+                    android:visibility="gone"
+                    android:text="Downloading... (~25MB) ⬇️"
+                    android:textAlignment="center"
+                    />
+
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/materialCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:strokeWidth="0dp"
+                    android:backgroundTint="#0D2C3B"
+                    android:layout_margin="@dimen/_15sdp"
+                    app:cardCornerRadius="@dimen/_10sdp"
+                    app:cardElevation="@dimen/_5sdp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/editTextFrom"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#00000000"
+                                android:minHeight="@dimen/_80sdp"
+                                android:gravity="start"
+                                android:inputType="textMultiLine"
+                                android:paddingStart="@dimen/_10sdp"
+                                android:paddingEnd="@dimen/_10sdp"
+                                android:paddingTop="@dimen/_12sdp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="end"
+                            android:paddingBottom="@dimen/_10sdp"
+                            android:orientation="horizontal">
+
+                            <ImageButton
+                                android:id="@+id/clearFrom"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/ripple_oval"
+                                android:padding="@dimen/_10sdp"
+                                android:src="@drawable/icon_clear_text"
+                                app:tint="#2196F3"
+                                tools:ignore="ContentDescription" />
+
+                            <ImageButton
+                                android:id="@+id/copyFrom"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/ripple_oval"
+                                android:padding="@dimen/_10sdp"
+                                android:src="@drawable/icon_copy"
+                                app:tint="#2196F3"
+                                tools:ignore="ContentDescription" />
+
+                            <ImageButton
+                                android:id="@+id/speakFrom"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/ripple_oval"
+                                android:contentDescription="@string/speak_from"
+                                android:padding="@dimen/_10sdp"
+                                android:src="@drawable/icon_speak"
+                                app:tint="#2196F3"
+                                />
+
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </FrameLayout>
+
+
+            <FrameLayout
+                android:id="@+id/frameLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_minus30sdp"
+                app:layout_constraintTop_toBottomOf="@+id/frameLayout2">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:strokeWidth="0dp"
+                    android:backgroundTint="#0D2C3B"
+                    android:layout_margin="@dimen/_15sdp"
+                    app:cardCornerRadius="@dimen/_10sdp"
+                    app:cardElevation="@dimen/_5sdp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="end"
+                            android:paddingTop="@dimen/_10sdp"
+                            android:orientation="horizontal">
+
+                            <ImageButton
+                                android:id="@+id/clearTo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/ripple_oval"
+                                android:padding="@dimen/_10sdp"
+                                android:src="@drawable/icon_clear_text"
+                                app:tint="#8BC34A"
+                                tools:ignore="ContentDescription" />
+
+                            <ImageButton
+                                android:id="@+id/copyTo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/ripple_oval"
+                                android:padding="@dimen/_10sdp"
+                                android:src="@drawable/icon_copy"
+                                app:tint="#8BC34A"
+                                tools:ignore="ContentDescription" />
+
+                            <ImageButton
+                                android:id="@+id/speakTo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/ripple_oval"
+                                android:contentDescription="@string/speak_from"
+                                android:padding="@dimen/_10sdp"
+                                android:src="@drawable/icon_speak"
+                                app:tint="#8BC34A"
+                                />
+
+
+                        </LinearLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_marginTop="@dimen/_minus10sdp"
+                            android:layout_height="wrap_content">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/editTextTo"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#00000000"
+                                android:inputType="textMultiLine"
+                                android:gravity="start"
+                                android:minHeight="@dimen/_90sdp"
+                                android:paddingStart="@dimen/_10sdp"
+                                android:paddingEnd="@dimen/_10sdp"
+                                android:paddingBottom="@dimen/_12sdp"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/frameLayout2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_minus35sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/materialCardView">
+
+                <ImageButton
+                    android:id="@+id/TranslateFrom"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:elevation="2dp"
+                    android:foreground="@drawable/ripple_oval"
+                    android:src="@drawable/ic_baseline_g_translate_24"
+                    android:textAllCaps="false"
+                    android:background="@drawable/round_bg"
+                    android:backgroundTint="#FF6534"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:padding="@dimen/_15sdp"
+                    app:tint="#0D2C3B" />
+            </FrameLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/_18sdp"
+                android:gravity="center"
+
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/frameLayout"
+                >
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    app:cardElevation="@dimen/_2sdp"
+                    android:backgroundTint="#0D2C3B"
+                    app:strokeWidth="0dp"
+                    android:padding="@dimen/_10sdp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/change_voice"
+                        android:textSize="@dimen/_12ssp"
+                        android:padding="@dimen/_10sdp"
+                        app:drawableEndCompat="@drawable/voice_icon"
+                        app:drawableTint="#FFBF00" />
+
+                    <ImageButton
+                        android:id="@+id/change_voice"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/ripple_rect"
+                        android:contentDescription="@string/todo" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <ImageButton
+                    android:id="@+id/speakButton"
+                    android:layout_width="@dimen/_36sdp"
+                    android:layout_height="@dimen/_50sdp"
+
+                    android:background="@drawable/round_bg"
+                    android:backgroundTint="#0D2C3B"
+                    android:elevation="@dimen/_5sdp"
+                    android:foreground="@drawable/ripple_oval"
+                    android:paddingStart="@dimen/_3sdp"
+
+                    android:paddingTop="@dimen/_12sdp"
+                    android:paddingEnd="@dimen/_3sdp"
+                    android:paddingBottom="@dimen/_10sdp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/speak_btn"
+
+
+                    app:tint="@color/themeColor"
+                    tools:ignore="ContentDescription" />
+
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    android:foreground="@drawable/ripple_rect"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    app:cardElevation="@dimen/_2sdp"
+                    android:backgroundTint="#0D2C3B"
+                    app:strokeWidth="0dp"
+                    android:padding="@dimen/_10sdp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/_12ssp"
+                        android:padding="@dimen/_10sdp"
+                        android:text="@string/change_voice_speed"
+                        app:drawableEndCompat="@drawable/ic_baseline_flash_on"
+                        app:drawableTint="#FFBF00"/>
+
+                    <ImageButton
+                        android:id="@+id/change_voice_speed"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/ripple_rect"
+                        android:contentDescription="@string/todo" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/stopListinging"
+                android:layout_width="@dimen/_45sdp"
+                android:layout_height="@dimen/_60sdp"
+                android:layout_margin="@dimen/_20sdp"
+                android:background="@drawable/ripple_oval"
+                android:visibility="gone"
+                android:scaleType="fitXY"
+                android:src="@drawable/speak_stop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/frameLayout"
+                tools:ignore="ContentDescription" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+</layout>

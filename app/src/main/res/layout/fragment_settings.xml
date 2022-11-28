@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".SettingsFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#FFFBEE"
+        >
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/change_voice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_50sdp"
+            android:foreground="@drawable/ripple_rect"
+            android:backgroundTint="#FFFBEE"
+            android:padding="@dimen/_10sdp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/change_voice"
+                    android:textSize="@dimen/_12ssp"
+                    android:padding="@dimen/_10sdp"
+                    app:drawableEndCompat="@drawable/voice_icon"
+                    app:drawableTint="#FFBF00" />
+
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/change_voice_speed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:foreground="@drawable/ripple_rect"
+            android:backgroundTint="#FFFBEE"
+            android:padding="@dimen/_10sdp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/_12ssp"
+                    android:padding="@dimen/_10sdp"
+                    android:text="@string/change_voice_speed"
+                    app:drawableEndCompat="@drawable/ic_baseline_flash_on"
+                    app:drawableTint="#FFBF00"/>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/action_settingsFragment_to_camera"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:foreground="@drawable/ripple_rect"
+            android:backgroundTint="#FFFBEE"
+            android:padding="@dimen/_10sdp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/_12ssp"
+                    android:padding="@dimen/_10sdp"
+                    android:text="@string/share_this_app"
+                    app:drawableEndCompat="@drawable/share_icon"
+                    app:drawableTint="#FFBF00"/>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/rateUs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:foreground="@drawable/ripple_rect"
+            android:backgroundTint="#FFFBEE"
+            android:padding="@dimen/_10sdp">
+
+                <TextView
+                    android:id="@+id/rateUsTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/_12ssp"
+                    android:padding="@dimen/_10sdp"
+                    android:text="@string/rate_this_app"
+                    app:drawableEndCompat="@drawable/star_rate"
+                    app:drawableTint="#FFBF00"/>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/changeTheme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:foreground="@drawable/ripple_rect"
+            android:backgroundTint="#FFFBEE"
+            android:padding="@dimen/_10sdp">
+
+                <TextView
+                    android:id="@+id/themeTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/_12ssp"
+                    android:padding="@dimen/_10sdp"
+                    android:text="@string/change_theme"
+                    app:drawableEndCompat="@drawable/dark_mode"
+                    app:drawableTint="#FFBF00"/>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+
+
+
+</layout>

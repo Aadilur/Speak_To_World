@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <attr name="bottomNav" format="reference"/>
+
+    <attr name="toggleColorBtnGroup" format="color"/>
+
+
+</resources>
+

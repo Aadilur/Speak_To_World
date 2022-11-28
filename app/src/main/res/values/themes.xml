@@ -1,0 +1,31 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.SpeakToWorld" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">#FFBF00</item>
+        <item name="colorPrimaryVariant">#009688</item>
+        <item name="colorOnPrimary">#1B1B1B</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" >#FFBF00</item>
+        <item name="android:navigationBarColor" >#FFBF00</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
+
+        <!-- Customize your theme here. -->
+        <item name="bottomNav">@drawable/round_bg</item>
+        <item name="toggleColorBtnGroup">#FFBF00</item>
+
+    </style>
+
+    <style name="BottomNavigationView">
+        <item name="colorSecondaryContainer">#FFBF00</item>
+
+    </style>
+
+
+
+</resources>
