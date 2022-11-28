@@ -25,6 +25,7 @@
                 android:paddingStart="@dimen/_10sdp"
                 android:paddingEnd="@dimen/_10sdp"
                 android:layout_marginTop="@dimen/_10sdp"
+
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
@@ -67,7 +68,7 @@
                             android:id="@+id/downloadFromPackage"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Download"
+                            android:text="@string/download"
                             android:visibility="gone"
                             android:paddingBottom="@dimen/_5sdp"
                             android:minHeight="0dp"
@@ -103,7 +104,8 @@
                         android:backgroundTint="#2196F3"
                         android:layout_margin="@dimen/_5sdp"
                         android:padding="@dimen/_5sdp"
-                        app:tint="#FFFFFF" />
+                        app:tint="#FFFFFF"
+                        android:contentDescription="@string/todo" />
 
                 <com.google.android.material.card.MaterialCardView
                     android:layout_width="0dp"
@@ -133,7 +135,7 @@
                             android:id="@+id/downloadToPackage"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Download"
+                            android:text="@string/download"
                             android:visibility="gone"
                             android:paddingBottom="@dimen/_5sdp"
                             android:minHeight="0dp"
@@ -156,7 +158,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/_16ssp"
                     android:visibility="gone"
-                    android:text="Downloading... (~25MB) ⬇️"
+                    android:text="@string/downloading_25mb"
                     android:textAlignment="center"
                     />
 
@@ -377,7 +379,8 @@
                     android:backgroundTint="#FF6534"
                     android:layout_margin="@dimen/_5sdp"
                     android:padding="@dimen/_15sdp"
-                    app:tint="#FFFFFF" />
+                    app:tint="#FFFFFF"
+                    android:contentDescription="@string/todo" />
             </FrameLayout>
 
             <LinearLayout
@@ -386,8 +389,6 @@
                 android:orientation="horizontal"
                 android:layout_marginTop="@dimen/_18sdp"
                 android:gravity="center"
-
-
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
